@@ -14,8 +14,8 @@ export const MovieInput = () => {
     }
     return(
         <div>
-            <input value={newMovie} onChange={(e)=>setNewMovie(e.target.value)} type="text"  />
-            <button onClick={handleAddMovie}>Add Movie</button>
+ <input onChange={(e) => setNewMovie(e.target.value)} value={newMovie} />
+ <button onClick={handleAddMovie}> Add Movie</button>
         </div>
     )
 }
