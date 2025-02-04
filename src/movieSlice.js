@@ -1,16 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState={movies:[]}
+const initialState = {
+    movies: [
+      { id: 1, name: "Interstellar" },
+      { id: 2, name: "Harry Potter" },
+    ],
+  };
 
 const movieSlice=createSlice({
     name:"movies",
     initialState,
     reducers:{
         addMovie:(state,action)=>{
-            state.movies.push(action,payload)
+            const newMovie={
+                id:state.movies(state.movies.length-1)+1,name:action.payload
+            }
+            state.movies.push(newMovie)
 
 
         },
-        removeMovie:(state,action)=>{}
+        // removeMovie:(state,action)=>{}
     }
 })
 
