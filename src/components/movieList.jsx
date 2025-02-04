@@ -1,14 +1,10 @@
 
-import { useSelector, useDispatch } from "react-redux";
-import { removeMovie } from "../movieSlice";
+import { useSelector } from "react-redux";
+// import { removeMovie } from "../movieSlice";
 
 export const MovieList = () => {
   const movies = useSelector((state) => state.movies.movies);
-  const dispatch = useDispatch();
 
-//   const handleRemoveMovie = (id) => {
-//     dispatch(removeMovie(id));
-  };
   return (
     <div>
       {" "}
@@ -17,10 +13,7 @@ export const MovieList = () => {
         <div key={movie.id}>
           {" "}
           {movie.name}{" "}
-          {/* <button onClick={() => handleRemoveMovie(movie.id)}>
-            {" "}
-            Delete Movie
-          </button> */}
+         
         </div>
       ))}
     </div>

@@ -12,7 +12,8 @@ const movieSlice=createSlice({
     reducers:{
         addMovie:(state,action)=>{
             const newMovie={
-                id:state.movies(state.movies.length-1)+1,name:action.payload
+                id:state.movies[state.movies.length-1]+1,
+                name:action.payload
             }
             state.movies.push(newMovie)
 
@@ -22,5 +23,5 @@ const movieSlice=createSlice({
     }
 })
 
-export const{addMovie,removeMovie}=movieSlice.actions
+export const{addMovie}=movieSlice.actions
 export default movieSlice.reducer
