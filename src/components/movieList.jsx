@@ -1,10 +1,17 @@
 
-import { useSelector } from "react-redux";
-// import { removeMovie } from "../movieSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { removeMovie } from "../movieSlice";
+
 
 export const MovieList = () => {
+
+  const dispatch=useDispatch()
   const movies = useSelector((state) => state.movies||[]);
 console.log("movie list",movies);
+
+const handleRemove=(id)=>{
+  dispatch(removeMovie(id))
+}
 
   return (
     <div>
@@ -13,9 +20,9 @@ console.log("movie list",movies);
       {movies.map((movie) => (
         <div key={movie.id}>
           
-          {movie.name}{" "}
+          {movie.name}{" "} <button onClick={()=>handleRemove(movie.id)}>Delete</button>
          
-        </div>
+        </div> 
       ))}
     </div>
   );
